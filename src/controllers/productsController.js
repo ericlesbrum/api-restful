@@ -15,7 +15,7 @@ async function post(req, res) {
         brand,
         price
     } = req.body;
-    
+
     const product = new ProductsModel({
         name,
         brand,
@@ -23,10 +23,41 @@ async function post(req, res) {
     });
 
     product.save();
-    
+
     res.send();
+}
+
+async function put(req, res) {
+    const { id } = req.params;
+
+    const product = await ProductsModel.findOneAndUpdate({ _id: id }, req.body, { new: true });
+    /*const product = await ProductsModel.findOne({ _id: id });
+
+    await product.updateOne(req.body);
+    
+    res.send({
+        product
+    })*/
+    res.send({
+        product
+    })
+}
+
+async function remove(req, res) {
+    const { id } = req.params;
+
+    
+    const remove = await ProductsModel.deleteOne({ _id: id });
+
+    const message = !remove.ok ? 'sucess' : 'error';
+
+    res.send({
+        message
+    })
 }
 module.exports = {
     get,
-    post
+    post,
+    put,
+    remove
 }
