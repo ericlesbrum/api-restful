@@ -6,9 +6,9 @@ const routes = require('./routes/routes');
 
 const app = express();
 
-db.connect()
+db.connect();
 
-app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 app.use('/api', routes);
 
