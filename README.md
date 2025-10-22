@@ -22,8 +22,8 @@ A aplicação foi construída sobre o ecossistema **Node.js**, utilizando um fra
 | **Backend Runtime** | **Node.js** | 18+ ou 20+ | Ambiente de execução da API. |
 | **Framework** | **Express.js** (Presumido) | Última Versão | Criação de rotas, middlewares e estrutura da API. |
 | **Linguagem** | **JavaScript (ES6+)** | N/A | Lógica de negócio e implementação dos endpoints. |
-| **Banco de Dados** | **(MongoDB / PostgreSQL / MySQL)** | N/A | Persistência de dados. *(Especifique o seu DB real)* |
-| **ORM/ODM** | **(Mongoose / Sequelize / Prisma)** | N/A | Gerenciamento e mapeamento do acesso a dados. *(Especifique o seu ORM/ODM real)* |
+| **Banco de Dados** | **(MongoDB)** | N/A | Persistência de dados. *(Especifique o seu DB real)* |
+| **ORM/ODM** | **(Mongoose)** | N/A | Gerenciamento e mapeamento do acesso a dados. *(Especifique o seu ORM/ODM real)* |
 
 ### 🛠️ Funcionalidades e Endpoints Principais
 
