@@ -1,108 +1,35 @@
-# 🌐 API RESTful Base - Construída com Node.js
+# 🚀 API RESTful Boilerplate - Node.js e Express.js
 
 ## 🎯 Sobre o Projeto
 
-O **api-restful** é um projeto de portfólio que demonstra minha habilidade em projetar, desenvolver e implementar uma **API RESTful**, escalável e bem estruturada. O objetivo principal é servir como um *boilerplate* ou modelo para futuras APIs, seguindo as melhores práticas e padrões de design REST.
+O **api-restful** é um *boilerplate* (modelo) de API RESTful projetado para ser escalável, modular e robusto. O objetivo é fornecer uma base sólida e bem estruturada para o desenvolvimento rápido de novas APIs, seguindo as melhores práticas de arquitetura de software e os padrões REST.
 
 Este projeto foca em:
 
-* **Separação de Preocupações:** Uso de arquitetura modular (Controllers, Services, Repositories/Models).
-* **Boas Práticas REST:** Implementação correta de verbos HTTP (`GET`, `POST`, `PUT`, `DELETE`) e códigos de status.
-* **Documentação:** Preparação para fácil documentação via ferramentas como Swagger/OpenAPI (opcional, mas bom para mencionar).
-* **Confiabilidade:** Tratamento de erros e validação de dados.
+* **Arquitetura Modular (MVC/Tricamada):** Implementa a separação de preocupações usando as camadas de Controllers, Services e Repositories (ou Models).
+* **Padrão REST:** Uso correto dos verbos HTTP (GET, POST, PUT, DELETE) e códigos de status.
+* **Configuração:** Utiliza variáveis de ambiente para gerenciar configurações sensíveis.
+* **Tratamento de Erros:** Implementação de middlewares para tratamento global e padronizado de exceções.
 
-## ⚙️ Arquitetura e Tecnologias
+## ⚙️ Tecnologias Utilizadas
 
-A aplicação foi construída sobre o ecossistema **Node.js**, utilizando um framework moderno e popular para a criação de rotas e middleware.
+A aplicação é construída no ecossistema Node.js com um foco em simplicidade, desempenho e escalabilidade.
 
-### 💻 Stack Tecnológica
+### Stack Principal
 
-| Categoria | Tecnologia | Versão (Exemplo) | Objetivo no Projeto |
-| :--- | :--- | :--- | :--- |
-| **Backend Runtime** | **Node.js** | 18+ ou 20+ | Ambiente de execução da API. |
-| **Framework** | **Express.js** (Presumido) | Última Versão | Criação de rotas, middlewares e estrutura da API. |
-| **Linguagem** | **JavaScript (ES6+)** | N/A | Lógica de negócio e implementação dos endpoints. |
-| **Banco de Dados** | **(MongoDB)** | N/A | Persistência de dados. *(Especifique o seu DB real)* |
-| **ORM/ODM** | **(Mongoose)** | N/A | Gerenciamento e mapeamento do acesso a dados. *(Especifique o seu ORM/ODM real)* |
-
-### 🛠️ Funcionalidades e Endpoints Principais
-
-A API implementa um modelo CRUD (Create, Read, Update, Delete) básico sobre o recurso principal (ex: `/users`, `/produtos`):
-
-| Método HTTP | Endpoint | Descrição |
+| Categoria | Tecnologia | Descrição |
 | :--- | :--- | :--- |
-| `GET` | `/api/v1/recurso` | Retorna a lista completa de recursos. |
-| `GET` | `/api/v1/recurso/:id` | Retorna um recurso específico pelo ID. |
-| `POST` | `/api/v1/recurso` | Cria um novo recurso. |
-| `PUT` | `/api/v1/recurso/:id` | Atualiza completamente um recurso existente. |
-| `DELETE` | `/api/v1/recurso/:id` | Remove um recurso específico. |
+| **Backend Runtime** | `Node.js` | Ambiente de execução da API. |
+| **Framework Web** | `Express.js` | Utilizado para roteamento, middlewares e estrutura. |
+| **Linguagem** | `JavaScript (ES6+)` | Linguagem de programação para a lógica de negócio. |
+| **Banco de Dados** | `MongoDB` (Presumido) | Sistema de gerenciamento de banco de dados NoSQL. |
+| **ODM (Op.)** | `Mongoose` (Presumido) | Mapeamento e modelagem de dados para o MongoDB. |
 
-**Tópicos Técnicos Demonstrações:**
+### Dependências Comuns
 
-* **Middlewares:** Uso de middlewares para *logging*, tratamento de CORS e verificação de *payloads*.
-* **Tratamento de Erros:** Respostas padronizadas para erros (e.g., `404 Not Found`, `400 Bad Request`, `500 Internal Server Error`).
-* **Variáveis de Ambiente:** Configuração via `.env` para segurança de chaves e strings de conexão.
+* `dotenv` para gerenciamento de variáveis de ambiente.
+* `cors` para controle de acesso CORS.
 
-## 🚀 Como Executar Localmente
+## 📂 Arquitetura
 
-Siga os passos para configurar e executar a API em seu ambiente de desenvolvimento.
-
-### Pré-requisitos
-
-* [Node.js](https://nodejs.org/) (versão compatível).
-* Um cliente REST (como **Postman**, **Insomnia** ou **VS Code Thunder Client**) para testar os endpoints.
-
-### Passos
-
-1.  **Clone o Repositório:**
-
-    ```bash
-    git clone [https://github.com/ericlesbrum/api-restful.git](https://github.com/ericlesbrum/api-restful.git)
-    cd api-restful
-    ```
-
-2.  **Instale as Dependências:**
-
-    ```bash
-    npm install
-    ```
-
-3.  **Configuração de Variáveis de Ambiente:**
-
-    Crie um arquivo `.env` na raiz do projeto e configure as variáveis necessárias (exemplo):
-
-    ```env
-    PORT=3000
-    DATABASE_URL="sua_string_de_conexao"
-    ```
-
-4.  **Inicie a Aplicação:**
-
-    ```bash
-    npm start 
-    # ou, se estiver usando nodemon para desenvolvimento:
-    npm run dev 
-    ```
-
-A API estará em execução em `http://localhost:<PORTA>`.
-
-## 🧪 Teste de Endpoints (Exemplo)
-
-Use o seu cliente REST favorito para testar a rota base.
-
-| Ação | Método | URL | Body (JSON para POST) |
-| :--- | :--- | :--- | :--- |
-| Criar | `POST` | `http://localhost:3000/api/v1/recurso` | `{"nome": "Exemplo", "descricao": "Novo item"}` |
-| Ler (Todos) | `GET` | `http://localhost:3000/api/v1/recurso` | *(N/A)* |
-
-
-## 🤝 Contribuições e Contato
-
-Este projeto é mantido para fins de demonstração de portfólio, mas sinta-se à vontade para inspecionar, dar sugestões ou reportar issues.
-
-* **Autor:** Ericles Brum
-* **GitHub:** [https://github.com/ericlesbrum](https://github.com/ericlesbrum)
-
----
-
-> 💖 **Obrigado por visitar o projeto!**
+O projeto segue uma estrutura modular para garantir a manutenção e organização:
